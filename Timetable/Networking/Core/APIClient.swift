@@ -15,16 +15,12 @@ class APIClientImpl: APIClient {
         var urlRequest = URLRequest(url: path)
         urlRequest.httpMethod = MethodType.post.rawValue
         urlRequest.httpBody = try? JSONEncoder().encode(resolver.params)
-        return URLSession.shared.dataTask(.promise, with: urlRequest).compactMap { data, response in
+        
+        return URLSession.shared.dataTask(.promise, with: urlRequest).map { data, response in
             let result = try? JSONDecoder().decode(Resolver.Result.self, from: data)
-            let resolverResponse = HAPIResolverResponse<Resolver>(result: result)
-            return resolverResponse
+            return HAPIResolverResponse<Resolver>(result: result)
         }
     }
-}
-
-enum ServerError: Error {
-    case noConnection
 }
 
 private extension APIClientImpl {

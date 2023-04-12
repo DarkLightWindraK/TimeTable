@@ -24,6 +24,7 @@
 		9EF2E27B29E2020A00709BF8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EF2E27929E2020A00709BF8 /* LoginViewController.xib */; };
 		9EF2E27F29E2022C00709BF8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E27D29E2022C00709BF8 /* RegisterViewController.swift */; };
 		9EF2E28029E2022C00709BF8 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EF2E27E29E2022C00709BF8 /* RegisterViewController.xib */; };
+		9EF8BE9E29E737FA0066B9BC /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF8BE9D29E737FA0066B9BC /* Assembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		9EF2E27929E2020A00709BF8 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		9EF2E27D29E2022C00709BF8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9EF2E27E29E2022C00709BF8 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		9EF8BE9D29E737FA0066B9BC /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		B19C5601851B1D649C6A28D0 /* Pods-Timetable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timetable.release.xcconfig"; path = "Target Support Files/Pods-Timetable/Pods-Timetable.release.xcconfig"; sourceTree = "<group>"; };
 		D381B6427272F751645711A4 /* Pods_Timetable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Timetable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 		9E2B398429E1FB8E00641B85 /* Timetable */ = {
 			isa = PBXGroup;
 			children = (
+				9EF8BE9C29E71FA90066B9BC /* DI */,
 				9EF2E27229E2016600709BF8 /* AuthFlow */,
 				9E2B399B29E1FE8500641B85 /* Networking */,
 				9E2B399A29E1FE7E00641B85 /* Services */,
@@ -206,6 +209,14 @@
 				9EF2E27E29E2022C00709BF8 /* RegisterViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9EF8BE9C29E71FA90066B9BC /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				9EF8BE9D29E737FA0066B9BC /* Assembly.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		CB118FC2407A669904BA79E3 /* Pods */ = {
@@ -337,6 +348,7 @@
 				9E2B398629E1FB8E00641B85 /* AppDelegate.swift in Sources */,
 				9E2B398829E1FB8E00641B85 /* SceneDelegate.swift in Sources */,
 				9EF2E27F29E2022C00709BF8 /* RegisterViewController.swift in Sources */,
+				9EF8BE9E29E737FA0066B9BC /* Assembly.swift in Sources */,
 				9EF2E27129E2011400709BF8 /* TokenModel.swift in Sources */,
 				9E2B399F29E1FEB600641B85 /* HAPIResolver.swift in Sources */,
 				9E2B39A129E1FED600641B85 /* APIClient.swift in Sources */,

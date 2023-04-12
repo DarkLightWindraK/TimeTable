@@ -6,13 +6,20 @@
 //
 
 import UIKit
+import PromiseKit
 
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        firstly {
+            AuthService(apiClient: Assembly.shared.resolve()).performLoginRequest(login: "addasd", password: "asdad")
+        }.done { _ in
+            print()
+        }.catch { error in
+            print()
+        }
     }
 
 
