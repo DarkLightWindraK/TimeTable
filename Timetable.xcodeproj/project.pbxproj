@@ -14,6 +14,13 @@
 		9E2B399229E1FB8F00641B85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E2B399029E1FB8F00641B85 /* LaunchScreen.storyboard */; };
 		9E2B399F29E1FEB600641B85 /* HAPIResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B399E29E1FEB600641B85 /* HAPIResolver.swift */; };
 		9E2B39A129E1FED600641B85 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2B39A029E1FED600641B85 /* APIClient.swift */; };
+		9E63737029E87D2F00ABFF66 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63736F29E87D2F00ABFF66 /* AuthCoordinator.swift */; };
+		9E63737329E87D6700ABFF66 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63737229E87D6700ABFF66 /* Coordinator.swift */; };
+		9E63737529E87D9100ABFF66 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63737429E87D9000ABFF66 /* AppCoordinator.swift */; };
+		9E63737729E8853900ABFF66 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63737629E8853900ABFF66 /* CoordinatorFactory.swift */; };
+		9E63737929E8876000ABFF66 /* AuthViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63737829E8876000ABFF66 /* AuthViewFactory.swift */; };
+		9E63737B29E8885600ABFF66 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63737A29E8885600ABFF66 /* LoginPresenter.swift */; };
+		9E63737D29E8886000ABFF66 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63737C29E8886000ABFF66 /* RegisterPresenter.swift */; };
 		9EF2E26529E2004500709BF8 /* HAPIResolverResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E26429E2004500709BF8 /* HAPIResolverResponse.swift */; };
 		9EF2E26729E2005C00709BF8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E26629E2005C00709BF8 /* Server.swift */; };
 		9EF2E26A29E2008000709BF8 /* AuthResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E26929E2008000709BF8 /* AuthResolver.swift */; };
@@ -37,6 +44,13 @@
 		9E2B399329E1FB8F00641B85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E2B399E29E1FEB600641B85 /* HAPIResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPIResolver.swift; sourceTree = "<group>"; };
 		9E2B39A029E1FED600641B85 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		9E63736F29E87D2F00ABFF66 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		9E63737229E87D6700ABFF66 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		9E63737429E87D9000ABFF66 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		9E63737629E8853900ABFF66 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		9E63737829E8876000ABFF66 /* AuthViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewFactory.swift; sourceTree = "<group>"; };
+		9E63737A29E8885600ABFF66 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		9E63737C29E8886000ABFF66 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		9EF2E26429E2004500709BF8 /* HAPIResolverResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPIResolverResponse.swift; sourceTree = "<group>"; };
 		9EF2E26629E2005C00709BF8 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		9EF2E26929E2008000709BF8 /* AuthResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResolver.swift; sourceTree = "<group>"; };
@@ -105,11 +119,14 @@
 		9E2B399929E1FD1900641B85 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				9E63737129E87D5C00ABFF66 /* Protocols */,
 				9E2B398529E1FB8E00641B85 /* AppDelegate.swift */,
 				9E2B398729E1FB8E00641B85 /* SceneDelegate.swift */,
 				9E2B398E29E1FB8F00641B85 /* Assets.xcassets */,
 				9E2B399029E1FB8F00641B85 /* LaunchScreen.storyboard */,
 				9E2B399329E1FB8F00641B85 /* Info.plist */,
+				9E63737429E87D9000ABFF66 /* AppCoordinator.swift */,
+				9E63737629E8853900ABFF66 /* CoordinatorFactory.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -149,6 +166,14 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		9E63737129E87D5C00ABFF66 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9E63737229E87D6700ABFF66 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		9EF2E26829E2006D00709BF8 /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +198,8 @@
 			children = (
 				9EF2E27429E201A900709BF8 /* Login */,
 				9EF2E27329E2019F00709BF8 /* Register */,
+				9E63736F29E87D2F00ABFF66 /* AuthCoordinator.swift */,
+				9E63737829E8876000ABFF66 /* AuthViewFactory.swift */,
 			);
 			path = AuthFlow;
 			sourceTree = "<group>";
@@ -181,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				9EF2E27C29E2021900709BF8 /* View */,
+				9E63737C29E8886000ABFF66 /* RegisterPresenter.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -189,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				9EF2E27729E201F200709BF8 /* View */,
+				9E63737A29E8885600ABFF66 /* LoginPresenter.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -346,16 +375,23 @@
 			files = (
 				9EF2E26F29E2010800709BF8 /* CredentialsModel.swift in Sources */,
 				9E2B398629E1FB8E00641B85 /* AppDelegate.swift in Sources */,
+				9E63737329E87D6700ABFF66 /* Coordinator.swift in Sources */,
 				9E2B398829E1FB8E00641B85 /* SceneDelegate.swift in Sources */,
+				9E63737B29E8885600ABFF66 /* LoginPresenter.swift in Sources */,
+				9E63737529E87D9100ABFF66 /* AppCoordinator.swift in Sources */,
 				9EF2E27F29E2022C00709BF8 /* RegisterViewController.swift in Sources */,
+				9E63737029E87D2F00ABFF66 /* AuthCoordinator.swift in Sources */,
 				9EF8BE9E29E737FA0066B9BC /* Assembly.swift in Sources */,
 				9EF2E27129E2011400709BF8 /* TokenModel.swift in Sources */,
 				9E2B399F29E1FEB600641B85 /* HAPIResolver.swift in Sources */,
 				9E2B39A129E1FED600641B85 /* APIClient.swift in Sources */,
 				9EF2E26A29E2008000709BF8 /* AuthResolver.swift in Sources */,
 				9EF2E26729E2005C00709BF8 /* Server.swift in Sources */,
+				9E63737929E8876000ABFF66 /* AuthViewFactory.swift in Sources */,
+				9E63737D29E8886000ABFF66 /* RegisterPresenter.swift in Sources */,
 				9EF2E26529E2004500709BF8 /* HAPIResolverResponse.swift in Sources */,
 				9EF2E26C29E2008C00709BF8 /* AuthService.swift in Sources */,
+				9E63737729E8853900ABFF66 /* CoordinatorFactory.swift in Sources */,
 				9EF2E27A29E2020A00709BF8 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
