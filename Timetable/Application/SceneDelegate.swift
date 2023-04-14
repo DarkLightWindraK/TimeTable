@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var appCoordinator: AppCoordinator?
     
-    private lazy var apiClient: APIClient = Assembly.shared.resolve()
+    private lazy var authService: AuthService = Assembly.shared.resolve()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController()
         
-        appCoordinator = AppCoordinator(navigationController: navigationController, apiClient: apiClient)
+        appCoordinator = AppCoordinator(navigationController: navigationController, authService: authService)
         appCoordinator?.start()
         
         window?.rootViewController = navigationController

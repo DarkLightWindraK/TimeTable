@@ -5,13 +5,8 @@ protocol APIClient {
 }
 
 class APIClientImpl: APIClient {
-    
-    private var baseURL: URL {
-        Server.baseURL
-    }
-    
     func send<Resolver: HAPIResolver> (_ resolver: Resolver) -> Promise<HAPIResolverResponse<Resolver>> {
-        let path = baseURL.appending(path: resolver.endpoint)
+        let path = Server.baseURL.appending(path: resolver.endpoint)
         var urlRequest = URLRequest(url: path)
         urlRequest.httpMethod = MethodType.post.rawValue
         urlRequest.httpBody = try? JSONEncoder().encode(resolver.params)

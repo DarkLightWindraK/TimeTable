@@ -2,20 +2,19 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     
-    let navigationController: UINavigationController
-    
-    private let apiClient: APIClient
+    private let navigationController: UINavigationController
+    private let authService: AuthService
     
     init(
         navigationController: UINavigationController,
-        apiClient: APIClient
+        authService: AuthService
     ) {
         self.navigationController = navigationController
-        self.apiClient = apiClient
+        self.authService = authService
     }
     
     func start() {
-        let authCoordinator = CoordinatorFactory.makeAuthCoordinator(navigationController: navigationController, apiClient: apiClient)
+        let authCoordinator = CoordinatorFactory.makeAuthCoordinator(navigationController: navigationController, authService: authService)
         authCoordinator.start()
     }
     

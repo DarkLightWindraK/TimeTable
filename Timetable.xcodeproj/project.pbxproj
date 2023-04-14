@@ -25,8 +25,8 @@
 		9EF2E26729E2005C00709BF8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E26629E2005C00709BF8 /* Server.swift */; };
 		9EF2E26A29E2008000709BF8 /* AuthResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E26929E2008000709BF8 /* AuthResolver.swift */; };
 		9EF2E26C29E2008C00709BF8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E26B29E2008C00709BF8 /* AuthService.swift */; };
-		9EF2E26F29E2010800709BF8 /* CredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E26E29E2010800709BF8 /* CredentialsModel.swift */; };
-		9EF2E27129E2011400709BF8 /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E27029E2011400709BF8 /* TokenModel.swift */; };
+		9EF2E26F29E2010800709BF8 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E26E29E2010800709BF8 /* Credentials.swift */; };
+		9EF2E27129E2011400709BF8 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E27029E2011400709BF8 /* AuthResponse.swift */; };
 		9EF2E27A29E2020A00709BF8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E27829E2020A00709BF8 /* LoginViewController.swift */; };
 		9EF2E27B29E2020A00709BF8 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EF2E27929E2020A00709BF8 /* LoginViewController.xib */; };
 		9EF2E27F29E2022C00709BF8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E27D29E2022C00709BF8 /* RegisterViewController.swift */; };
@@ -55,8 +55,8 @@
 		9EF2E26629E2005C00709BF8 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		9EF2E26929E2008000709BF8 /* AuthResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResolver.swift; sourceTree = "<group>"; };
 		9EF2E26B29E2008C00709BF8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		9EF2E26E29E2010800709BF8 /* CredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsModel.swift; sourceTree = "<group>"; };
-		9EF2E27029E2011400709BF8 /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
+		9EF2E26E29E2010800709BF8 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		9EF2E27029E2011400709BF8 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		9EF2E27829E2020A00709BF8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9EF2E27929E2020A00709BF8 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		9EF2E27D29E2022C00709BF8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -187,8 +187,8 @@
 		9EF2E26D29E200F100709BF8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9EF2E26E29E2010800709BF8 /* CredentialsModel.swift */,
-				9EF2E27029E2011400709BF8 /* TokenModel.swift */,
+				9EF2E26E29E2010800709BF8 /* Credentials.swift */,
+				9EF2E27029E2011400709BF8 /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,7 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EF2E26F29E2010800709BF8 /* CredentialsModel.swift in Sources */,
+				9EF2E26F29E2010800709BF8 /* Credentials.swift in Sources */,
 				9E2B398629E1FB8E00641B85 /* AppDelegate.swift in Sources */,
 				9E63737329E87D6700ABFF66 /* Coordinator.swift in Sources */,
 				9E2B398829E1FB8E00641B85 /* SceneDelegate.swift in Sources */,
@@ -382,7 +382,7 @@
 				9EF2E27F29E2022C00709BF8 /* RegisterViewController.swift in Sources */,
 				9E63737029E87D2F00ABFF66 /* AuthCoordinator.swift in Sources */,
 				9EF8BE9E29E737FA0066B9BC /* Assembly.swift in Sources */,
-				9EF2E27129E2011400709BF8 /* TokenModel.swift in Sources */,
+				9EF2E27129E2011400709BF8 /* AuthResponse.swift in Sources */,
 				9E2B399F29E1FEB600641B85 /* HAPIResolver.swift in Sources */,
 				9E2B39A129E1FED600641B85 /* APIClient.swift in Sources */,
 				9EF2E26A29E2008000709BF8 /* AuthResolver.swift in Sources */,

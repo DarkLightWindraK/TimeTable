@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         Assembly.shared.register(service: APIClientImpl() as APIClient)
+        Assembly.shared.register(service: AuthService(apiClient: Assembly.shared.resolve()))
         
         return true
     }

@@ -1,13 +1,14 @@
 import PromiseKit
 
 class LoginPresenter {
-    weak var viewController: LoginViewController?
     var delegate: AuthCoordinator?
+    
+    weak var viewController: LoginViewController?
     
     private let authService: AuthService
     
-    init(apiClient: APIClient) {
-        self.authService = AuthService(apiClient: apiClient)
+    init(authService: AuthService) {
+        self.authService = authService
     }
     
     func openRegisterScreen() {
@@ -15,6 +16,13 @@ class LoginPresenter {
     }
     
     func performLoginRequest(login: String, password: String) {
+        guard
+            !login.isEmpty,
+            !password.isEmpty
+        else {
+            return
+        }
+        
         firstly {
             authService.performLoginRequest(login: login, password: password)
         }.done { tokenModel in

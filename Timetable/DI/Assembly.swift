@@ -13,7 +13,9 @@ class Assembly: AssemblyProtocol {
     
     func resolve<Service>() -> Service {
         let key = typeName(Service.self)
-        assert(services[key] != nil, "Cannot assembly for \(Service.self)")
+        if services[key] == nil {
+            fatalError("Cannot assembly for \(Service.self)")
+        }
         return services[key] as! Service
     }
     

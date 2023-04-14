@@ -3,8 +3,8 @@ import UIKit
 enum CoordinatorFactory {
     static func makeAuthCoordinator(
         navigationController: UINavigationController,
-        apiClient: APIClient
+        authService: AuthService
     ) -> Coordinator {
-        AuthCoordinator(navigationController: navigationController, apiClient: apiClient)
+        AuthCoordinator(navigationController: navigationController, authService: authService)
     }
 }

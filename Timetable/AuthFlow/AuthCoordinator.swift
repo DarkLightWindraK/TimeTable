@@ -1,17 +1,19 @@
 import UIKit
 
 class AuthCoordinator: Coordinator {
-    let navigationController: UINavigationController
+    private let navigationController: UINavigationController
+    private let authService: AuthService
     
-    private let apiClient: APIClient
-    
-    init(navigationController: UINavigationController, apiClient: APIClient) {
+    init(
+        navigationController: UINavigationController,
+        authService: AuthService
+    ) {
         self.navigationController = navigationController
-        self.apiClient = apiClient
+        self.authService = authService
     }
     
     func start() {
-        let loginViewController = AuthViewFactory.makeLoginViewController(delegate: self, apiClient: apiClient)
+        let loginViewController = AuthViewFactory.makeLoginViewController(delegate: self, authService: authService)
         navigationController.pushViewController(loginViewController, animated: true)
     }
     
