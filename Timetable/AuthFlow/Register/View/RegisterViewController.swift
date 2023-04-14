@@ -8,22 +8,25 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-
+    var presenter: RegisterPresenter?
+    
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var confirmationTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func didSignUpTap(_ sender: UIButton) {
+        presenter?.performRegisterRequest(
+            login: loginTextField.text ?? "",
+            password: passwordTextField.text ?? "",
+            confirmaton: confirmationTextField.text ?? ""
+        )
     }
-    */
-
+    
+    @IBAction func didHaveAccountTap(_ sender: UIButton) {
+        presenter?.closeRegisterScreen()
+    }
 }

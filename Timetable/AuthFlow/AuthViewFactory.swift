@@ -11,7 +11,15 @@ enum AuthViewFactory {
         return viewController
     }
     
-    static func makeRegisterViewController() -> RegisterViewController {
-        return RegisterViewController() // TODO: убрать заглушку
+    static func makeRegisterViewController(
+        delegate: AuthCoordinator,
+        authService: AuthService
+    ) -> RegisterViewController {
+        let presenter = RegisterPresenter(authService: authService)
+        let viewController = RegisterViewController()
+        presenter.viewController = viewController
+        viewController.presenter = presenter
+        presenter.delegate = delegate
+        return viewController
     }
 }

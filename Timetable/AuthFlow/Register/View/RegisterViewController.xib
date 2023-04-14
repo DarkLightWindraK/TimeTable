@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Timetable" customModuleProvider="target">
             <connections>
+                <outlet property="confirmationTextField" destination="pXm-qi-ZbL" id="mgV-80-dGB"/>
+                <outlet property="loginTextField" destination="f1t-2s-QPC" id="Bis-gh-gQ1"/>
+                <outlet property="passwordTextField" destination="cle-Jh-XkX" id="faB-Wu-IO1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -43,13 +46,20 @@
                     <rect key="frame" x="40" y="249" width="313" height="35"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="filled" title="Sign up"/>
+                    <connections>
+                        <action selector="didSignUpTap:" destination="-1" eventType="touchUpInside" id="912-Z3-46S"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cD2-DB-9y1">
-                    <rect key="frame" x="208" y="292" width="145" height="15"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" systemColor="systemBlueColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whe-fo-u2o">
+                    <rect key="frame" x="196" y="292" width="169" height="29"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Already have an account?">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="didHaveAccountTap:" destination="-1" eventType="touchUpInside" id="5m0-P3-y2J"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -61,15 +71,15 @@
                 <constraint firstItem="KYN-KL-Ihv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="BcS-Vm-NRf"/>
                 <constraint firstItem="f1t-2s-QPC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="DUM-Tb-F6j"/>
                 <constraint firstItem="Izn-pq-3hC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FuI-Wj-bwl"/>
+                <constraint firstAttribute="trailing" secondItem="whe-fo-u2o" secondAttribute="trailing" constant="28" id="KcP-fe-6Un"/>
                 <constraint firstItem="cle-Jh-XkX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="NLn-Pa-p9C"/>
                 <constraint firstItem="f1t-2s-QPC" firstAttribute="top" secondItem="Izn-pq-3hC" secondAttribute="bottom" constant="32" id="PVS-lw-TZF"/>
                 <constraint firstItem="cle-Jh-XkX" firstAttribute="top" secondItem="f1t-2s-QPC" secondAttribute="bottom" constant="8" id="WMR-sU-mJ5"/>
-                <constraint firstItem="cD2-DB-9y1" firstAttribute="top" secondItem="KYN-KL-Ihv" secondAttribute="bottom" constant="8" id="YwX-HS-luE"/>
                 <constraint firstItem="Izn-pq-3hC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dkj-NJ-y3z"/>
                 <constraint firstItem="pXm-qi-ZbL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="pdw-xm-O2Q"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cle-Jh-XkX" secondAttribute="trailing" constant="40" id="sGD-Uf-aui"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f1t-2s-QPC" secondAttribute="trailing" constant="40" id="sYe-Dm-fNy"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cD2-DB-9y1" secondAttribute="trailing" constant="40" id="wzr-6X-ggi"/>
+                <constraint firstItem="whe-fo-u2o" firstAttribute="top" secondItem="KYN-KL-Ihv" secondAttribute="bottom" constant="8" id="vfi-Nd-i3h"/>
             </constraints>
             <point key="canvasLocation" x="130" y="21"/>
         </view>
@@ -77,9 +87,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

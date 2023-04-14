@@ -18,8 +18,12 @@ class AuthCoordinator: Coordinator {
     }
     
     func openRegisterScreen() {
-        let registerViewController = AuthViewFactory.makeRegisterViewController()
+        let registerViewController = AuthViewFactory.makeRegisterViewController(delegate: self, authService: authService)
         navigationController.pushViewController(registerViewController, animated: true)
+    }
+    
+    func closeRegisterScreen() {
+        navigationController.popViewController(animated: true)
     }
     
 }

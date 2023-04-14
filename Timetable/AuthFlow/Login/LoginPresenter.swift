@@ -20,6 +20,7 @@ class LoginPresenter {
             !login.isEmpty,
             !password.isEmpty
         else {
+            //TODO: подсветить красным
             return
         }
         
