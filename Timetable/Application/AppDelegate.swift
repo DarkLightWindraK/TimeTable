@@ -9,6 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Assembly.shared.register(service: APIClientImpl() as APIClient)
         Assembly.shared.register(service: AuthServiceImpl(apiClient: Assembly.shared.resolve()) as AuthService)
+        Assembly.shared.register(service: TimeTableServiceImpl(apiClient: Assembly.shared.resolve()) as TimeTableService)
         
         return true
     }

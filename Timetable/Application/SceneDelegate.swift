@@ -6,6 +6,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var appCoordinator: AppCoordinator?
     
     private lazy var authService: AuthService = Assembly.shared.resolve()
+    private lazy var timeTableService: TimeTableService = Assembly.shared.resolve()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
