@@ -5,6 +5,6 @@ enum CoordinatorFactory {
         navigationController: UINavigationController,
         authService: AuthService
     ) -> Coordinator {
-        AuthCoordinator(navigationController: navigationController, authService: authService)
+        AuthCoordinatorImpl(navigationController: navigationController, authService: authService)
     }
 }

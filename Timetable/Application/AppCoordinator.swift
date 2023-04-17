@@ -14,7 +14,10 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
-        let authCoordinator = CoordinatorFactory.makeAuthCoordinator(navigationController: navigationController, authService: authService)
+        let authCoordinator = CoordinatorFactory.makeAuthCoordinator(
+            navigationController: navigationController,
+            authService: authService
+        )
         authCoordinator.start()
     }
     

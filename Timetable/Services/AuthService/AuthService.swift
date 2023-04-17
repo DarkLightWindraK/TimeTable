@@ -1,6 +1,10 @@
 import PromiseKit
 
-class AuthService {
+protocol AuthService {
+    func performLoginRequest(login: String, password: String) -> Promise<AuthResponse>
+}
+
+class AuthServiceImpl: AuthService {
     
     private let apiClient: APIClient
     

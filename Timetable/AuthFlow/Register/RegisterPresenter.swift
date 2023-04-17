@@ -1,9 +1,14 @@
 import PromiseKit
 
-class RegisterPresenter {
+protocol RegisterPresenter {
+    func closeRegisterScreen()
+    func performRegisterRequest(login: String, password: String, confirmaton: String)
+}
+
+class RegisterPresenterImpl: RegisterPresenter {
     var delegate: AuthCoordinator?
     
-    weak var viewController: RegisterViewController?
+    weak var viewController: RegisterView?
     
     private let authService: AuthService
     

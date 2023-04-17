@@ -3,7 +3,7 @@ enum AuthViewFactory {
         delegate: AuthCoordinator,
         authService: AuthService
     ) -> LoginViewController {
-        let presenter = LoginPresenter(authService: authService)
+        let presenter = LoginPresenterImpl(authService: authService)
         let viewController = LoginViewController()
         presenter.viewController = viewController
         viewController.presenter = presenter
@@ -15,7 +15,7 @@ enum AuthViewFactory {
         delegate: AuthCoordinator,
         authService: AuthService
     ) -> RegisterViewController {
-        let presenter = RegisterPresenter(authService: authService)
+        let presenter = RegisterPresenterImpl(authService: authService)
         let viewController = RegisterViewController()
         presenter.viewController = viewController
         viewController.presenter = presenter

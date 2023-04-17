@@ -1,6 +1,8 @@
 import UIKit
 
-class LoginViewController: UIViewController {
+protocol LoginView: AnyObject {} 
+
+class LoginViewController: UIViewController, LoginView {
     var presenter: LoginPresenter?
     
     @IBOutlet private weak var loginTextField: UITextField!

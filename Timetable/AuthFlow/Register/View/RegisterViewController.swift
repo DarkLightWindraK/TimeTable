@@ -1,13 +1,8 @@
-//
-//  RegisterViewController.swift
-//  Timetable
-//
-//  Created by Антон Смирнов on 08.04.2023.
-//
-
 import UIKit
 
-class RegisterViewController: UIViewController {
+protocol RegisterView: AnyObject {}
+
+class RegisterViewController: UIViewController, RegisterView {
     var presenter: RegisterPresenter?
     
     @IBOutlet private weak var loginTextField: UITextField!

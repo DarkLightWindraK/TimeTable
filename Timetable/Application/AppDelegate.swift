@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Timetable
-//
-//  Created by Антон Смирнов on 08.04.2023.
-//
-
 import UIKit
 
 @main
@@ -15,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         Assembly.shared.register(service: APIClientImpl() as APIClient)
-        Assembly.shared.register(service: AuthService(apiClient: Assembly.shared.resolve()))
+        Assembly.shared.register(service: AuthServiceImpl(apiClient: Assembly.shared.resolve()) as AuthService)
         
         return true
     }
