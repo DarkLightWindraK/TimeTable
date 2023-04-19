@@ -1,6 +1,6 @@
 struct TimeTableResolver: HAPIResolver {
     
-    typealias Result = [Lesson]
+    typealias Result = TimeTableResponse
     
     var params: TimeTableRequest
     

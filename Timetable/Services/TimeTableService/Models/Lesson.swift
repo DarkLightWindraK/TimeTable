@@ -12,6 +12,10 @@ struct Lesson: Decodable {
         case endOfLesson = "end"
         case room = "room_name"
         case name = "subject_name"
-        case teacher = "teacher_name"
+        case teacher = "teacher_fio"
     }
+}
+
+struct TimeTableResponse: Decodable {
+    let lessons: [Lesson]
 }

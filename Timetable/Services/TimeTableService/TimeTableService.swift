@@ -7,7 +7,7 @@ protocol TimeTableService {
         course: Int,
         group: String,
         subgroup: Subgroup
-    ) -> Promise<[Lesson]>
+    ) -> Promise<TimeTableResponse>
 }
 
 class TimeTableServiceImpl: TimeTableService {
@@ -17,7 +17,7 @@ class TimeTableServiceImpl: TimeTableService {
         self.apiClient = apiClient
     }
     
-    func getTimeTable(faculty: String, course: Int, group: String, subgroup: Subgroup) -> PromiseKit.Promise<[Lesson]> {
+    func getTimeTable(faculty: String, course: Int, group: String, subgroup: Subgroup) -> Promise<TimeTableResponse> {
         let params = TimeTableRequest(faculty: faculty, course: course, group: group, subgroup: subgroup)
         let resolver = TimeTableResolver(params: params)
         return apiClient.send(resolver).compactMap(\.result)
