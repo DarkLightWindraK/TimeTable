@@ -1,6 +1,7 @@
 import Foundation
 
-struct Lesson: Decodable {
+struct LessonModel: Decodable {
+    let number: Int
     let beginOfLesson: String
     let endOfLesson: String
     let room: String
@@ -13,9 +14,10 @@ struct Lesson: Decodable {
         case room = "room_name"
         case name = "subject_name"
         case teacher = "teacher_fio"
+        case number
     }
 }
 
 struct TimeTableResponse: Decodable {
-    let lessons: [Lesson]
+    let lessons: [LessonModel]
 }

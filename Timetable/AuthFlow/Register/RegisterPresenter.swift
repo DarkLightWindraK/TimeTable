@@ -7,7 +7,6 @@ protocol RegisterPresenter {
 
 class RegisterPresenterImpl: RegisterPresenter {
     var delegate: AuthCoordinator?
-    
     weak var viewController: RegisterView?
     
     private let authService: AuthService

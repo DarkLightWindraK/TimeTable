@@ -14,7 +14,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController()
         
-        appCoordinator = AppCoordinator(navigationController: navigationController, authService: authService)
+        appCoordinator = AppCoordinator(
+            navigationController: navigationController,
+            authService: authService,
+            timeTableService: timeTableService
+        )
         appCoordinator?.start()
         
         window?.rootViewController = navigationController

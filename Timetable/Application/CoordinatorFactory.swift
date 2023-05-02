@@ -7,4 +7,11 @@ enum CoordinatorFactory {
     ) -> Coordinator {
         AuthCoordinatorImpl(navigationController: navigationController, authService: authService)
     }
+    
+    static func makeTimeTableCoordinator(
+        navigationController: UINavigationController,
+        timeTableService: TimeTableService
+    ) -> Coordinator {
+        TimeTableCoordinatorImpl(navigationController: navigationController, timeTableService: timeTableService)
+    }
 }

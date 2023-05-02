@@ -7,7 +7,6 @@ protocol LoginPresenter {
 
 class LoginPresenterImpl: LoginPresenter {
     var delegate: AuthCoordinator?
-    
     weak var viewController: LoginView?
     
     private let authService: AuthService
