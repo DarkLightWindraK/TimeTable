@@ -8,7 +8,7 @@ protocol TimeTableView: AnyObject {
 class TimeTableViewController: UIViewController, TimeTableView {
     var presenter: TimeTablePresenter?
     
-    @IBOutlet weak var scheduleCollectionView: UICollectionView!
+    @IBOutlet private weak var scheduleCollectionView: UICollectionView!
     @IBOutlet private weak var infoDayLabel: UIBarButtonItem!
 
     
@@ -26,8 +26,9 @@ class TimeTableViewController: UIViewController, TimeTableView {
         scheduleCollectionView.dataSource = self
         scheduleCollectionView.showsVerticalScrollIndicator = false
         scheduleCollectionView.showsHorizontalScrollIndicator = false
-        view.backgroundColor = .secondarySystemBackground
         scheduleCollectionView.backgroundColor = .secondarySystemBackground
+        
+        view.backgroundColor = .secondarySystemBackground
         
         presenter?.loadFirstState()
     }
@@ -51,7 +52,7 @@ class TimeTableViewController: UIViewController, TimeTableView {
 
 extension TimeTableViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.bounds.width, height: 100)
+        CGSize(width: collectionView.bounds.width, height: 100)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -59,9 +60,11 @@ extension TimeTableViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellID, for: indexPath) as! LessonViewCell
-        guard let lesson = presenter?.lessons[indexPath.section] else {
-            return cell
+        guard
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellID, for: indexPath) as? LessonViewCell,
+            let lesson = presenter?.lessons[indexPath.row]
+        else {
+            return LessonViewCell()
         }
         
         cell.configure(lesson: lesson)

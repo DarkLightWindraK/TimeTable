@@ -31,9 +31,9 @@ class LoginPresenterImpl: LoginPresenter {
         firstly {
             authService.performLoginRequest(login: login, password: password)
         }.done { tokenModel in
-            //TODO: обработать
+            self.delegate?.openTimeTable(token: tokenModel.token)
         }.catch { error in
-            //TODO: обработать
+            print(error)
         }
     }
 }

@@ -1,6 +1,9 @@
 import UIKit
 
 class LessonViewCell: UICollectionViewCell {
+    @IBOutlet private weak var subjectLabel: UILabel!
+    @IBOutlet private weak var teacherLabel: UILabel!
+    @IBOutlet private weak var roomLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -8,12 +11,9 @@ class LessonViewCell: UICollectionViewCell {
     }
     
     func configure(lesson: Lesson) {
-//        let data = "Пара: \(lesson.number)\nПредмет: \(lesson.name)\nПреподаватель: \(lesson.teacher)\nАудитория: \(lesson.room)"
-//        let attributedString = NSMutableAttributedString(string: data)
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.lineSpacing = 4
-//        attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
-//        lessonInfoLabel.attributedText = attributedString
+        subjectLabel.text = lesson.name
+        teacherLabel.text = lesson.teacher
+        roomLabel.text = "Аудитория: \(lesson.room)"
     }
 }
 

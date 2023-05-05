@@ -105,6 +105,11 @@
                 <constraint firstAttribute="bottom" secondItem="rGa-u3-Wcu" secondAttribute="bottom" id="zn2-tE-NIf"/>
             </constraints>
             <size key="customSize" width="465" height="192"/>
+            <connections>
+                <outlet property="roomLabel" destination="a0M-UF-blI" id="bYL-PO-vlp"/>
+                <outlet property="subjectLabel" destination="8fu-sV-IpZ" id="kza-1P-UL3"/>
+                <outlet property="teacherLabel" destination="0xD-TE-zuK" id="Az8-3o-Bvp"/>
+            </connections>
             <point key="canvasLocation" x="324.4274809160305" y="69.718309859154928"/>
         </collectionViewCell>
     </objects>

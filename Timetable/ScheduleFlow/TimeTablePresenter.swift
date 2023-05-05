@@ -26,15 +26,14 @@ class TimeTablePresenterImpl: TimeTablePresenter {
     }
     
     func getTimeTable() {
-//        firstly {
-//            timeTableService.getTimeTable(faculty: "35", course: 34, group: "243", subgroup: .first)
-//        }.done { [weak self] response in
-//            self?.lessons = LessonMapper.mapLessonModel(lessons: response.lessons)
-//            self?.viewController?.showLessons()
-//        }.catch { error in
-//            print(error)
-//        }
-        lessons = TestData.makeLessons()
+        firstly {
+            timeTableService.getTimeTable(faculty: "Faculty of Mathematics and Mechanics", course: 1, group: "MM-21", subgroup: .all)
+        }.done { [weak self] response in
+            self?.lessons = LessonMapper.transformToLesson(lessons: response.lessons)
+            self?.viewController?.showLessons()
+        }.catch { error in
+            print(error)
+        }
     }
     
     func showNextDay() {

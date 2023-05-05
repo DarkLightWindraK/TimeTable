@@ -24,6 +24,7 @@
 		9E63737929E8876000ABFF66 /* AuthViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63737829E8876000ABFF66 /* AuthViewFactory.swift */; };
 		9E63737B29E8885600ABFF66 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63737A29E8885600ABFF66 /* LoginPresenter.swift */; };
 		9E63737D29E8886000ABFF66 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E63737C29E8886000ABFF66 /* RegisterPresenter.swift */; };
+		9EA141482A0175C8008F7062 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA141472A0175C8008F7062 /* TokenService.swift */; };
 		9EA7DC2529F18C6700B39868 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7DC2329F18C6700B39868 /* TimeTableViewController.swift */; };
 		9EA7DC2629F18C6700B39868 /* TimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EA7DC2429F18C6700B39868 /* TimeTableViewController.xib */; };
 		9EAA2C6229F68B5F001B9750 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA2C6129F68B5F001B9750 /* Lesson.swift */; };
@@ -67,6 +68,7 @@
 		9E63737829E8876000ABFF66 /* AuthViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewFactory.swift; sourceTree = "<group>"; };
 		9E63737A29E8885600ABFF66 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		9E63737C29E8886000ABFF66 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		9EA141472A0175C8008F7062 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
 		9EA7DC2329F18C6700B39868 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		9EA7DC2429F18C6700B39868 /* TimeTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableViewController.xib; sourceTree = "<group>"; };
 		9EAA2C6129F68B5F001B9750 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		9E2B399A29E1FE7E00641B85 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9EA141462A0175B0008F7062 /* TokenService */,
 				9ED0B5D429EDCCB800FEA2EB /* TimeTableService */,
 				9EF2E26829E2006D00709BF8 /* AuthService */,
 			);
@@ -201,6 +204,14 @@
 				9E63737229E87D6700ABFF66 /* Coordinator.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9EA141462A0175B0008F7062 /* TokenService */ = {
+			isa = PBXGroup;
+			children = (
+				9EA141472A0175C8008F7062 /* TokenService.swift */,
+			);
+			path = TokenService;
 			sourceTree = "<group>";
 		};
 		9EA7DC2229F18C4400B39868 /* View */ = {
@@ -493,6 +504,7 @@
 				9E63737729E8853900ABFF66 /* CoordinatorFactory.swift in Sources */,
 				9ED1B1F92A00F5AC003D01B2 /* LessonViewCell.swift in Sources */,
 				9EF2E27A29E2020A00709BF8 /* LoginViewController.swift in Sources */,
+				9EA141482A0175C8008F7062 /* TokenService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
