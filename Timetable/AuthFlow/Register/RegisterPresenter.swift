@@ -2,25 +2,44 @@ import PromiseKit
 
 protocol RegisterPresenter {
     func closeRegisterScreen()
-    func performRegisterRequest(login: String, password: String, confirmaton: String)
+    func performRegisterRequest(
+        fullname: String,
+        login: String,
+        password: String,
+        confirmaton: String,
+        userType: UserType
+    )
 }
 
 class RegisterPresenterImpl: RegisterPresenter {
-    var delegate: AuthCoordinator?
     weak var viewController: RegisterView?
+    var onFinishFlow: (() -> Void)?
+    var onLoginScreenTapped: (() -> Void)?
     
     private let authService: AuthService
+    private let tokenService: TokenService
     
-    init(authService: AuthService) {
+    init(
+        authService: AuthService,
+        tokenService: TokenService
+    ) {
         self.authService = authService
+        self.tokenService = tokenService
     }
     
     func closeRegisterScreen() {
-        delegate?.closeRegisterScreen()
+        onLoginScreenTapped?()
     }
     
-    func performRegisterRequest(login: String, password: String, confirmaton: String) {
+    func performRegisterRequest(
+        fullname: String,
+        login: String,
+        password: String,
+        confirmaton: String,
+        userType: UserType
+    ) {
         guard
+            !fullname.isEmpty,
             !login.isEmpty,
             !password.isEmpty,
             !confirmaton.isEmpty,
@@ -31,11 +50,17 @@ class RegisterPresenterImpl: RegisterPresenter {
         }
         
         firstly {
-            authService.performLoginRequest(login: login, password: password) //TODO: поменять ручку
-        }.done { tokenModel in
-            //TODO: обработать
+            authService.performRegisterRequest(
+                fullname: fullname,
+                login: login,
+                password: password,
+                userType: userType
+            )
+        }.done { [weak self] response in
+            self?.tokenService.save(token: response.token)
+            self?.onFinishFlow?()
         }.catch { error in
-            //TODO: обработать
+            print(error)
         }
     }
 }

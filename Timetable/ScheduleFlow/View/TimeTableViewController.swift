@@ -30,7 +30,7 @@ class TimeTableViewController: UIViewController, TimeTableView {
         
         view.backgroundColor = .secondarySystemBackground
         
-        presenter?.loadFirstState()
+        presenter?.loadLessons()
     }
     
     @IBAction func showPreviousDay(_ sender: UIBarButtonItem) {

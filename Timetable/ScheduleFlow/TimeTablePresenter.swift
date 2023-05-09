@@ -4,7 +4,7 @@ import PromiseKit
 protocol TimeTablePresenter {
     var lessons: [Lesson] { get }
     
-    func loadFirstState()
+    func loadLessons()
     func showNextDay()
     func showPreviousDay()
 }
@@ -46,7 +46,7 @@ class TimeTablePresenterImpl: TimeTablePresenter {
         viewController?.showNewDate(date: dateFormatter.string(from: displayedDate))
     }
     
-    func loadFirstState() {
+    func loadLessons() {
         viewController?.showNewDate(date: dateFormatter.string(from: displayedDate))
         getTimeTable()
     }

@@ -2,7 +2,7 @@ struct AuthResolver: HAPIResolver {
     
     typealias Result = AuthResponse
     
-    var params: Credentials
+    var params: AuthParams
     
     var endpoint: String {
         "login"

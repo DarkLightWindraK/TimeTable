@@ -23,10 +23,7 @@ class AppCoordinator: Coordinator {
         if tokenService.validate() {
             startTimeTableFlow()
         } else {
-            startAuthFlow { token in
-                self.tokenService.save(token: token)
-                self.startTimeTableFlow()
-            }
+            startAuthFlow()
         }
     }
 }
@@ -40,12 +37,15 @@ private extension AppCoordinator {
         timeTableCoordinator.start()
     }
     
-    func startAuthFlow(completion: @escaping (String) -> Void) {
+    func startAuthFlow() {
         let authCoordinator = CoordinatorFactory.makeAuthCoordinator(
             navigationController: navigationController,
             authService: authService,
-            completion: completion
-        )
+            tokenService: tokenService,
+            onFinishFlow: {
+                self.navigationController.viewControllers.removeAll()
+                self.startTimeTableFlow()
+            })
         authCoordinator.start()
     }
 }

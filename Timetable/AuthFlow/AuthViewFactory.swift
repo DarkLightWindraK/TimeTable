@@ -1,25 +1,31 @@
 enum AuthViewFactory {
     static func makeLoginViewController(
-        delegate: AuthCoordinator,
-        authService: AuthService
+        authService: AuthService,
+        tokenService: TokenService,
+        onRegisterScreenTapped: @escaping () -> Void,
+        onFinishFlow: @escaping () -> Void
     ) -> LoginViewController {
-        let presenter = LoginPresenterImpl(authService: authService)
+        let presenter = LoginPresenterImpl(authService: authService, tokenService: tokenService)
         let viewController = LoginViewController()
         presenter.viewController = viewController
         viewController.presenter = presenter
-        presenter.delegate = delegate
+        presenter.onRegisterScreenTapped = onRegisterScreenTapped
+        presenter.onFinishFlow = onFinishFlow
         return viewController
     }
     
     static func makeRegisterViewController(
-        delegate: AuthCoordinator,
-        authService: AuthService
+        authService: AuthService,
+        tokenService: TokenService,
+        onLoginScreenTapped: @escaping () -> Void,
+        onFinishFlow: @escaping () -> Void
     ) -> RegisterViewController {
-        let presenter = RegisterPresenterImpl(authService: authService)
+        let presenter = RegisterPresenterImpl(authService: authService, tokenService: tokenService)
         let viewController = RegisterViewController()
         presenter.viewController = viewController
         viewController.presenter = presenter
-        presenter.delegate = delegate
+        presenter.onLoginScreenTapped = onLoginScreenTapped
+        presenter.onFinishFlow = onFinishFlow
         return viewController
     }
 }

@@ -4,12 +4,14 @@ enum CoordinatorFactory {
     static func makeAuthCoordinator(
         navigationController: UINavigationController,
         authService: AuthService,
-        completion: @escaping ((String) -> Void)
+        tokenService: TokenService,
+        onFinishFlow: @escaping () -> Void
     ) -> Coordinator {
         AuthCoordinatorImpl(
             navigationController: navigationController,
             authService: authService,
-            completion: completion
+            tokenService: tokenService,
+            onSuccessLogin: onFinishFlow
         )
     }
     

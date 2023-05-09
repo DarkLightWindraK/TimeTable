@@ -6,17 +6,23 @@ protocol LoginPresenter {
 }
 
 class LoginPresenterImpl: LoginPresenter {
-    var delegate: AuthCoordinator?
     weak var viewController: LoginView?
+    var onFinishFlow: (() -> Void)?
+    var onRegisterScreenTapped: (() -> Void)?
     
     private let authService: AuthService
+    private let tokenService: TokenService
     
-    init(authService: AuthService) {
+    init(
+        authService: AuthService,
+        tokenService: TokenService
+    ) {
         self.authService = authService
+        self.tokenService = tokenService
     }
     
     func openRegisterScreen() {
-        delegate?.openRegisterScreen()
+        onRegisterScreenTapped?()
     }
     
     func performLoginRequest(login: String, password: String) {
@@ -30,8 +36,9 @@ class LoginPresenterImpl: LoginPresenter {
         
         firstly {
             authService.performLoginRequest(login: login, password: password)
-        }.done { tokenModel in
-            self.delegate?.openTimeTable(token: tokenModel.token)
+        }.done { [weak self] response in
+            self?.tokenService.save(token: response.token)
+            self?.onFinishFlow?()
         }.catch { error in
             print(error)
         }

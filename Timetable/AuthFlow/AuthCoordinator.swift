@@ -1,42 +1,55 @@
 import UIKit
 
 protocol AuthCoordinator: Coordinator {
+    func openLoginScreen()
     func openRegisterScreen()
-    func closeRegisterScreen()
-    func openTimeTable(token: String)
 }
 
 class AuthCoordinatorImpl: AuthCoordinator {
     private let navigationController: UINavigationController
     private let authService: AuthService
-    private let completion: (_ token: String) -> Void
+    private let tokenService: TokenService
+    private let onSuccessLogin: () -> Void
     
     init(
         navigationController: UINavigationController,
         authService: AuthService,
-        completion: @escaping (_ token: String) -> Void
+        tokenService: TokenService,
+        onSuccessLogin: @escaping () -> Void
     ) {
         self.navigationController = navigationController
         self.authService = authService
-        self.completion = completion
+        self.tokenService = tokenService
+        self.onSuccessLogin = onSuccessLogin
     }
     
     func start() {
-        let loginViewController = AuthViewFactory.makeLoginViewController(delegate: self, authService: authService)
-        navigationController.pushViewController(loginViewController, animated: true)
+        openLoginScreen()
     }
     
     func openRegisterScreen() {
-        let registerViewController = AuthViewFactory.makeRegisterViewController(delegate: self, authService: authService)
+        let registerViewController = AuthViewFactory.makeRegisterViewController(
+            authService: authService,
+            tokenService: tokenService,
+            onLoginScreenTapped: {
+                self.navigationController.popViewController(animated: true)
+            },
+            onFinishFlow: {
+                self.onSuccessLogin()
+            })
         navigationController.pushViewController(registerViewController, animated: true)
     }
     
-    func closeRegisterScreen() {
-        navigationController.popViewController(animated: true)
-    }
-    
-    func openTimeTable(token: String) {
-        navigationController.viewControllers = []
-        completion(token)
+    func openLoginScreen() {
+        let loginViewController = AuthViewFactory.makeLoginViewController(
+            authService: authService,
+            tokenService: tokenService,
+            onRegisterScreenTapped: {
+                self.openRegisterScreen()
+            },
+            onFinishFlow: {
+                self.onSuccessLogin()
+            })
+        navigationController.pushViewController(loginViewController, animated: true)
     }
 }
