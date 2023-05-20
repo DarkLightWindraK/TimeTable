@@ -15,14 +15,14 @@ class TimeTablePresenterImpl: TimeTablePresenter {
     weak var viewController: TimeTableView?
     
     private let timeTableService: TimeTableService
-    private var displayedDate: Date = .now
     private let dateFormatter = DateFormatter()
+    private var displayedDate: Date = .now
     
     init(timeTableService: TimeTableService) {
         self.timeTableService = timeTableService
         
-        dateFormatter.locale = Locale(identifier: "ru-RU")
-        dateFormatter.setLocalizedDateFormatFromTemplate("EEE MMM d yyyy")
+        dateFormatter.locale = Locale(identifier: Constants.dateFormatterLocale)
+        dateFormatter.setLocalizedDateFormatFromTemplate(Constants.dateFormatterTemplate)
     }
     
     func getTimeTable() {
@@ -37,17 +37,25 @@ class TimeTablePresenterImpl: TimeTablePresenter {
     }
     
     func showNextDay() {
-        displayedDate.addTimeInterval(86400)
+        displayedDate.addTimeInterval(Constants.dayInSeconds)
         viewController?.showNewDate(date: dateFormatter.string(from: displayedDate))
     }
 
     func showPreviousDay() {
-        displayedDate.addTimeInterval(-86400)
+        displayedDate.addTimeInterval(-Constants.dayInSeconds)
         viewController?.showNewDate(date: dateFormatter.string(from: displayedDate))
     }
     
     func loadLessons() {
         viewController?.showNewDate(date: dateFormatter.string(from: displayedDate))
         getTimeTable()
+    }
+}
+
+private extension TimeTablePresenterImpl {
+    enum Constants {
+        static let dayInSeconds: Double = 86400
+        static let dateFormatterLocale = "ru-RU"
+        static let dateFormatterTemplate = "EEE MMM d yyyy"
     }
 }

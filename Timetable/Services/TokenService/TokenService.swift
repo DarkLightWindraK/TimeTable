@@ -11,14 +11,17 @@ class TokenServiceImpl: TokenService {
     private let storage = UserDefaults.standard
     
     func save(token: String) {
+        var dateComponents = DateComponents()
+        dateComponents.day = 1
+        
         storage.set(token, forKey: Constants.tokenKey)
-        storage.set(Date(), forKey: Constants.expirationDateKey)
+        storage.set(Calendar.current.date(byAdding: dateComponents, to: Date()), forKey: Constants.expirationDate)
     }
     
     func validate() -> Bool {
         guard
             let _ = storage.string(forKey: Constants.tokenKey),
-            let expirationDate = storage.object(forKey: Constants.expirationDateKey) as? Date
+            let expirationDate = storage.object(forKey: Constants.expirationDate) as? Date
         else {
             return false
         }
@@ -34,6 +37,6 @@ class TokenServiceImpl: TokenService {
 private extension TokenServiceImpl {
     enum Constants {
         static let tokenKey = "authToken"
-        static let expirationDateKey = "tokenExpirationDate"
+        static let expirationDate = "tokenExpirationDate"
     }
 }

@@ -1,5 +1,5 @@
 import Foundation
 
 enum Server {
-    static let baseURL = URL(string: "http://158.160.44.177:8080/")!
+    static let baseURL = URL(string: "http://51.250.86.220:8080/")!
 }

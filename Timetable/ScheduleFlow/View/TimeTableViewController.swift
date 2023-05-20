@@ -11,7 +11,6 @@ class TimeTableViewController: UIViewController, TimeTableView {
     @IBOutlet private weak var scheduleCollectionView: UICollectionView!
     @IBOutlet private weak var infoDayLabel: UIBarButtonItem!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,17 +68,6 @@ extension TimeTableViewController: UICollectionViewDelegate, UICollectionViewDat
         
         cell.configure(lesson: lesson)
         return cell
-    }
-}
-
-enum TestData {
-    static func makeLessons() -> [Lesson] {
-        var array: [Lesson] = []
-        for i in 1...20 {
-            let lesson = Lesson(number: i, beginOfLesson: "", endOfLesson: "", room: "\(i * ((1...5).randomElement() ?? 1))", name: "Предмет \(i)", teacher: "Преподаватель \(i)")
-            array.append(lesson)
-        }
-        return array
     }
 }
 

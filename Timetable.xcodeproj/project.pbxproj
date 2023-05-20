@@ -29,6 +29,8 @@
 		9E83F6902A0A5A420057155B /* RegisterParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83F68F2A0A5A420057155B /* RegisterParams.swift */; };
 		9E83F6922A0A5A4F0057155B /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E83F6912A0A5A4F0057155B /* RegisterResponse.swift */; };
 		9EA141482A0175C8008F7062 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA141472A0175C8008F7062 /* TokenService.swift */; };
+		9EA540532A0A868400999C0E /* UserInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA540522A0A868400999C0E /* UserInfoService.swift */; };
+		9EA576FD2A18BABE001AF3AA /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA576FC2A18BABE001AF3AA /* TabBarCoordinator.swift */; };
 		9EA7DC2529F18C6700B39868 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA7DC2329F18C6700B39868 /* TimeTableViewController.swift */; };
 		9EA7DC2629F18C6700B39868 /* TimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EA7DC2429F18C6700B39868 /* TimeTableViewController.xib */; };
 		9EAA2C6229F68B5F001B9750 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA2C6129F68B5F001B9750 /* Lesson.swift */; };
@@ -77,6 +79,8 @@
 		9E83F68F2A0A5A420057155B /* RegisterParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterParams.swift; sourceTree = "<group>"; };
 		9E83F6912A0A5A4F0057155B /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		9EA141472A0175C8008F7062 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		9EA540522A0A868400999C0E /* UserInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoService.swift; sourceTree = "<group>"; };
+		9EA576FC2A18BABE001AF3AA /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		9EA7DC2329F18C6700B39868 /* TimeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		9EA7DC2429F18C6700B39868 /* TimeTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableViewController.xib; sourceTree = "<group>"; };
 		9EAA2C6129F68B5F001B9750 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 		9E2B398429E1FB8E00641B85 /* Timetable */ = {
 			isa = PBXGroup;
 			children = (
+				9EA576FB2A18BAAD001AF3AA /* TabBar */,
 				9ED0B5D329EDCC9800FEA2EB /* ScheduleFlow */,
 				9EF8BE9C29E71FA90066B9BC /* DI */,
 				9EF2E27229E2016600709BF8 /* AuthFlow */,
@@ -171,6 +176,7 @@
 		9E2B399A29E1FE7E00641B85 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				9EA540512A0A866100999C0E /* UserInfoService */,
 				9EA141462A0175B0008F7062 /* TokenService */,
 				9ED0B5D429EDCCB800FEA2EB /* TimeTableService */,
 				9EF2E26829E2006D00709BF8 /* AuthService */,
@@ -247,6 +253,22 @@
 				9EA141472A0175C8008F7062 /* TokenService.swift */,
 			);
 			path = TokenService;
+			sourceTree = "<group>";
+		};
+		9EA540512A0A866100999C0E /* UserInfoService */ = {
+			isa = PBXGroup;
+			children = (
+				9EA540522A0A868400999C0E /* UserInfoService.swift */,
+			);
+			path = UserInfoService;
+			sourceTree = "<group>";
+		};
+		9EA576FB2A18BAAD001AF3AA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9EA576FC2A18BABE001AF3AA /* TabBarCoordinator.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		9EA7DC2229F18C4400B39868 /* View */ = {
@@ -519,6 +541,7 @@
 				9E16117E29F2C53F00ECC45F /* TimeTablePresenter.swift in Sources */,
 				9E63737529E87D9100ABFF66 /* AppCoordinator.swift in Sources */,
 				9E83F6922A0A5A4F0057155B /* RegisterResponse.swift in Sources */,
+				9EA576FD2A18BABE001AF3AA /* TabBarCoordinator.swift in Sources */,
 				9EF2E27F29E2022C00709BF8 /* RegisterViewController.swift in Sources */,
 				9E63737029E87D2F00ABFF66 /* AuthCoordinator.swift in Sources */,
 				9EA7DC2529F18C6700B39868 /* TimeTableViewController.swift in Sources */,
@@ -527,6 +550,7 @@
 				9ED0B5D929EDD01900FEA2EB /* TimeTableResponse.swift in Sources */,
 				9E16118029F2C70800ECC45F /* TimeTableCoordinator.swift in Sources */,
 				9EF8BE9E29E737FA0066B9BC /* Assembly.swift in Sources */,
+				9EA540532A0A868400999C0E /* UserInfoService.swift in Sources */,
 				9EAA2C6229F68B5F001B9750 /* Lesson.swift in Sources */,
 				9ED0B5D629EDCCD500FEA2EB /* TimeTableService.swift in Sources */,
 				9E83F68B2A0A584E0057155B /* RegisterResolver.swift in Sources */,

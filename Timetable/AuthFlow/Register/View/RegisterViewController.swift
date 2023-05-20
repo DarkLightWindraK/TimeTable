@@ -21,7 +21,7 @@ class RegisterViewController: UIViewController, RegisterView {
             login: loginTextField.text ?? "",
             password: passwordTextField.text ?? "",
             confirmaton: confirmationTextField.text ?? "",
-            userType: UserType(rawValue: userTypeSegment.titleForSegment(at: userTypeSegment.selectedSegmentIndex)!)!
+            userType: UserType(rawValue: userTypeSegment.titleForSegment(at: userTypeSegment.selectedSegmentIndex)!.lowercased())!
         )
     }
     
