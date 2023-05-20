@@ -41,6 +41,7 @@
 		9ED0B5DD29EDD3FF00FEA2EB /* TimeTableResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED0B5DC29EDD3FF00FEA2EB /* TimeTableResolver.swift */; };
 		9ED1B1F92A00F5AC003D01B2 /* LessonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED1B1F72A00F5AC003D01B2 /* LessonViewCell.swift */; };
 		9ED1B1FA2A00F5AC003D01B2 /* LessonViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ED1B1F82A00F5AC003D01B2 /* LessonViewCell.xib */; };
+		9EECB6432A197980003640ED /* MainTabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EECB6422A197980003640ED /* MainTabBarConfigurator.swift */; };
 		9EF2E26529E2004500709BF8 /* HAPIResolverResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E26429E2004500709BF8 /* HAPIResolverResponse.swift */; };
 		9EF2E26729E2005C00709BF8 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E26629E2005C00709BF8 /* Server.swift */; };
 		9EF2E26A29E2008000709BF8 /* AuthResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EF2E26929E2008000709BF8 /* AuthResolver.swift */; };
@@ -91,6 +92,7 @@
 		9ED0B5DC29EDD3FF00FEA2EB /* TimeTableResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableResolver.swift; sourceTree = "<group>"; };
 		9ED1B1F72A00F5AC003D01B2 /* LessonViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewCell.swift; sourceTree = "<group>"; };
 		9ED1B1F82A00F5AC003D01B2 /* LessonViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonViewCell.xib; sourceTree = "<group>"; };
+		9EECB6422A197980003640ED /* MainTabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarConfigurator.swift; sourceTree = "<group>"; };
 		9EF2E26429E2004500709BF8 /* HAPIResolverResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAPIResolverResponse.swift; sourceTree = "<group>"; };
 		9EF2E26629E2005C00709BF8 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		9EF2E26929E2008000709BF8 /* AuthResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResolver.swift; sourceTree = "<group>"; };
@@ -147,8 +149,7 @@
 		9E2B398429E1FB8E00641B85 /* Timetable */ = {
 			isa = PBXGroup;
 			children = (
-				9EA576FB2A18BAAD001AF3AA /* TabBar */,
-				9ED0B5D329EDCC9800FEA2EB /* ScheduleFlow */,
+				9EA576FB2A18BAAD001AF3AA /* MainFlow */,
 				9EF8BE9C29E71FA90066B9BC /* DI */,
 				9EF2E27229E2016600709BF8 /* AuthFlow */,
 				9E2B399B29E1FE8500641B85 /* Networking */,
@@ -263,12 +264,14 @@
 			path = UserInfoService;
 			sourceTree = "<group>";
 		};
-		9EA576FB2A18BAAD001AF3AA /* TabBar */ = {
+		9EA576FB2A18BAAD001AF3AA /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				9ED0B5D329EDCC9800FEA2EB /* ScheduleFlow */,
 				9EA576FC2A18BABE001AF3AA /* TabBarCoordinator.swift */,
+				9EECB6422A197980003640ED /* MainTabBarConfigurator.swift */,
 			);
-			path = TabBar;
+			path = MainFlow;
 			sourceTree = "<group>";
 		};
 		9EA7DC2229F18C4400B39868 /* View */ = {
@@ -329,6 +332,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		9EECB6442A197C30003640ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9E83F6882A0A575B0057155B /* UserType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9EF2E26829E2006D00709BF8 /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +362,7 @@
 		9EF2E27229E2016600709BF8 /* AuthFlow */ = {
 			isa = PBXGroup;
 			children = (
+				9EECB6442A197C30003640ED /* Models */,
 				9EF2E27429E201A900709BF8 /* Login */,
 				9EF2E27329E2019F00709BF8 /* Register */,
 				9E63736F29E87D2F00ABFF66 /* AuthCoordinator.swift */,
@@ -364,7 +376,6 @@
 			children = (
 				9EF2E27C29E2021900709BF8 /* View */,
 				9E63737C29E8886000ABFF66 /* RegisterPresenter.swift */,
-				9E83F6882A0A575B0057155B /* UserType.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -538,6 +549,7 @@
 				9E63737329E87D6700ABFF66 /* Coordinator.swift in Sources */,
 				9E2B398829E1FB8E00641B85 /* SceneDelegate.swift in Sources */,
 				9E63737B29E8885600ABFF66 /* LoginPresenter.swift in Sources */,
+				9EECB6432A197980003640ED /* MainTabBarConfigurator.swift in Sources */,
 				9E16117E29F2C53F00ECC45F /* TimeTablePresenter.swift in Sources */,
 				9E63737529E87D9100ABFF66 /* AppCoordinator.swift in Sources */,
 				9E83F6922A0A5A4F0057155B /* RegisterResponse.swift in Sources */,

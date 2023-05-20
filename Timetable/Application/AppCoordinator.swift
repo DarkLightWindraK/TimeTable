@@ -21,7 +21,7 @@ class AppCoordinator: Coordinator {
     
     func start() {
         if tokenService.validate() {
-            startTimeTableFlow()
+            startMainFlow()
         } else {
             startAuthFlow()
         }
@@ -29,12 +29,12 @@ class AppCoordinator: Coordinator {
 }
 
 private extension AppCoordinator {
-    func startTimeTableFlow() {
-        let timeTableCoordinator = CoordinatorFactory.makeTimeTableCoordinator(
+    func startMainFlow() {
+        let tabBarCoordinator = CoordinatorFactory.makeTabBarCoordinator(
             navigationController: navigationController,
             timeTableService: timeTableService
         )
-        timeTableCoordinator.start()
+        tabBarCoordinator.start()
     }
     
     func startAuthFlow() {
@@ -44,7 +44,7 @@ private extension AppCoordinator {
             tokenService: tokenService,
             onFinishFlow: {
                 self.navigationController.viewControllers.removeAll()
-                self.startTimeTableFlow()
+                self.startMainFlow()
             })
         authCoordinator.start()
     }

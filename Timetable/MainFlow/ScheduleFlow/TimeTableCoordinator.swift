@@ -23,7 +23,8 @@ class TimeTableCoordinatorImpl: TimeTableCoordinator {
             TimeTableViewFactory.getTimeTableViewController(
                 timeTableService: timeTableService,
                 delegate: self
-            ), animated: true
+            ),
+            animated: true
         )
     }
 }

@@ -1,8 +1,17 @@
 import PromiseKit
 
 protocol AuthService {
-    func performLoginRequest(login: String, password: String) -> Promise<AuthResponse>
-    func performRegisterRequest(fullname: String, login: String, password: String, userType: UserType) -> Promise<RegisterResponse>
+    func performLoginRequest(
+        login: String,
+        password: String
+    ) -> Promise<AuthResponse>
+    
+    func performRegisterRequest(
+        fullname: String,
+        login: String,
+        password: String,
+        userType: UserType
+    ) -> Promise<RegisterResponse>
 }
 
 class AuthServiceImpl: AuthService {
