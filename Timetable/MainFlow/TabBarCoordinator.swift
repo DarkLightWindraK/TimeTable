@@ -17,7 +17,11 @@ class TabBarCoordinatorImpl: TabBarCoordinator {
     }
     
     func start() {
-        let tabBarController = MainTabBarConfigurator.configure(timeTableService: timeTableService)
+        let tabBarConfigurator = MainTabBarConfigurator(
+            timeTableService: timeTableService,
+            userType: .student
+        )
+        let tabBarController = tabBarConfigurator.configure()
         navigationController.pushViewController(tabBarController, animated: true)
     }
 }

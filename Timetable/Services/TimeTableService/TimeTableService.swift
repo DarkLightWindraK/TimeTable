@@ -17,8 +17,18 @@ class TimeTableServiceImpl: TimeTableService {
         self.apiClient = apiClient
     }
     
-    func getTimeTable(faculty: String, course: Int, group: String, subgroup: Subgroup) -> Promise<TimeTableResponse> {
-        let params = TimeTableRequest(faculty: faculty, course: course, group: group, subgroup: subgroup)
+    func getTimeTable(
+        faculty: String,
+        course: Int,
+        group: String,
+        subgroup: Subgroup
+    ) -> Promise<TimeTableResponse> {
+        let params = TimeTableRequest(
+            faculty: faculty,
+            course: course,
+            group: group,
+            subgroup: subgroup
+        )
         let resolver = TimeTableResolver(params: params)
         return apiClient.send(resolver).compactMap(\.result)
     }

@@ -35,6 +35,7 @@
 		9EA7DC2629F18C6700B39868 /* TimeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EA7DC2429F18C6700B39868 /* TimeTableViewController.xib */; };
 		9EAA2C6229F68B5F001B9750 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA2C6129F68B5F001B9750 /* Lesson.swift */; };
 		9EAA2C6429F6930B001B9750 /* LessonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA2C6329F6930B001B9750 /* LessonMapper.swift */; };
+		9EC5D7DA2A1A2368002581C4 /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5D7D92A1A2368002581C4 /* TabBarModel.swift */; };
 		9ED0B5D629EDCCD500FEA2EB /* TimeTableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED0B5D529EDCCD500FEA2EB /* TimeTableService.swift */; };
 		9ED0B5D929EDD01900FEA2EB /* TimeTableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED0B5D829EDD01900FEA2EB /* TimeTableResponse.swift */; };
 		9ED0B5DB29EDD3ED00FEA2EB /* TimeTableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED0B5DA29EDD3ED00FEA2EB /* TimeTableRequest.swift */; };
@@ -86,6 +87,7 @@
 		9EA7DC2429F18C6700B39868 /* TimeTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeTableViewController.xib; sourceTree = "<group>"; };
 		9EAA2C6129F68B5F001B9750 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		9EAA2C6329F6930B001B9750 /* LessonMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonMapper.swift; sourceTree = "<group>"; };
+		9EC5D7D92A1A2368002581C4 /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		9ED0B5D529EDCCD500FEA2EB /* TimeTableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableService.swift; sourceTree = "<group>"; };
 		9ED0B5D829EDD01900FEA2EB /* TimeTableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableResponse.swift; sourceTree = "<group>"; };
 		9ED0B5DA29EDD3ED00FEA2EB /* TimeTableRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableRequest.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				9ED0B5D329EDCC9800FEA2EB /* ScheduleFlow */,
 				9EA576FC2A18BABE001AF3AA /* TabBarCoordinator.swift */,
 				9EECB6422A197980003640ED /* MainTabBarConfigurator.swift */,
+				9EC5D7D92A1A2368002581C4 /* TabBarModel.swift */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -332,14 +335,6 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		9EECB6442A197C30003640ED /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				9E83F6882A0A575B0057155B /* UserType.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		9EF2E26829E2006D00709BF8 /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +348,7 @@
 		9EF2E26D29E200F100709BF8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9E83F6882A0A575B0057155B /* UserType.swift */,
 				9E83F68E2A0A5A230057155B /* Register */,
 				9E83F68D2A0A5A160057155B /* Login */,
 			);
@@ -362,7 +358,6 @@
 		9EF2E27229E2016600709BF8 /* AuthFlow */ = {
 			isa = PBXGroup;
 			children = (
-				9EECB6442A197C30003640ED /* Models */,
 				9EF2E27429E201A900709BF8 /* Login */,
 				9EF2E27329E2019F00709BF8 /* Register */,
 				9E63736F29E87D2F00ABFF66 /* AuthCoordinator.swift */,
@@ -551,6 +546,7 @@
 				9E63737B29E8885600ABFF66 /* LoginPresenter.swift in Sources */,
 				9EECB6432A197980003640ED /* MainTabBarConfigurator.swift in Sources */,
 				9E16117E29F2C53F00ECC45F /* TimeTablePresenter.swift in Sources */,
+				9EC5D7DA2A1A2368002581C4 /* TabBarModel.swift in Sources */,
 				9E63737529E87D9100ABFF66 /* AppCoordinator.swift in Sources */,
 				9E83F6922A0A5A4F0057155B /* RegisterResponse.swift in Sources */,
 				9EA576FD2A18BABE001AF3AA /* TabBarCoordinator.swift in Sources */,
