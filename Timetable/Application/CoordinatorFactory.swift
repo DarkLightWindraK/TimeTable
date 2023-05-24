@@ -27,11 +27,13 @@ enum CoordinatorFactory {
     
     static func makeTabBarCoordinator(
         navigationController: UINavigationController,
-        timeTableService: TimeTableService
+        timeTableService: TimeTableService,
+        flagStorage: FlagStorage
     ) -> Coordinator {
         TabBarCoordinatorImpl(
             navigationController: navigationController,
-            timeTableService: timeTableService
+            timeTableService: timeTableService,
+            flagStorage: flagStorage
         )
     }
 }

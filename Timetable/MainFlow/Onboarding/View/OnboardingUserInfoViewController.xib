@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingUserInfoViewController" customModule="Timetable" customModuleProvider="target">
+            <connections>
+                <outlet property="courseTextField" destination="gW3-2E-DCA" id="Kv0-ha-maZ"/>
+                <outlet property="facultyTextField" destination="viZ-F5-APz" id="knb-wS-8jJ"/>
+                <outlet property="groupTextField" destination="xit-6g-FDM" id="lZA-4F-u3q"/>
+                <outlet property="subgroupTextField" destination="0i5-kb-feZ" id="DEq-o4-gGj"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tell about yourself" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9i7-mL-vWT">
+                    <rect key="frame" x="117.00000000000001" y="59" width="159.33333333333337" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your course" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gW3-2E-DCA">
+                    <rect key="frame" x="40" y="115" width="313" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your faculty" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="viZ-F5-APz">
+                    <rect key="frame" x="40" y="157" width="313" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your group" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xit-6g-FDM">
+                    <rect key="frame" x="40" y="199" width="313" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your subgroup" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0i5-kb-feZ">
+                    <rect key="frame" x="40" y="241" width="313" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bb-Mh-bx1">
+                    <rect key="frame" x="40" y="291" width="313" height="35"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Done"/>
+                    <connections>
+                        <action selector="didDoneTap:" destination="-1" eventType="touchUpInside" id="R32-FD-fr7"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xit-6g-FDM" secondAttribute="trailing" constant="40" id="4gC-FR-3K1"/>
+                <constraint firstItem="0i5-kb-feZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="6rf-F4-8Fp"/>
+                <constraint firstItem="0i5-kb-feZ" firstAttribute="top" secondItem="xit-6g-FDM" secondAttribute="bottom" constant="8" id="8Ou-nY-yHQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8Bb-Mh-bx1" secondAttribute="trailing" constant="40" id="9k5-0l-bAU"/>
+                <constraint firstItem="xit-6g-FDM" firstAttribute="top" secondItem="viZ-F5-APz" secondAttribute="bottom" constant="8" id="Akj-ca-K3b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="viZ-F5-APz" secondAttribute="trailing" constant="40" id="EcD-Xe-1Em"/>
+                <constraint firstItem="8Bb-Mh-bx1" firstAttribute="top" secondItem="0i5-kb-feZ" secondAttribute="bottom" constant="16" id="Eow-vq-To0"/>
+                <constraint firstItem="xit-6g-FDM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="WoB-e0-xld"/>
+                <constraint firstItem="viZ-F5-APz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="Z9M-RU-FIu"/>
+                <constraint firstItem="8Bb-Mh-bx1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="aD1-RZ-Vp7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gW3-2E-DCA" secondAttribute="trailing" constant="40" id="gKy-eG-4Re"/>
+                <constraint firstItem="9i7-mL-vWT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hrX-C1-P3y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0i5-kb-feZ" secondAttribute="trailing" constant="40" id="jQw-3Z-NVd"/>
+                <constraint firstItem="9i7-mL-vWT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="jed-vB-1YU"/>
+                <constraint firstItem="gW3-2E-DCA" firstAttribute="top" secondItem="9i7-mL-vWT" secondAttribute="bottom" constant="32" id="kgX-k3-VVu"/>
+                <constraint firstItem="gW3-2E-DCA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="lfo-g2-Ruh"/>
+                <constraint firstItem="viZ-F5-APz" firstAttribute="top" secondItem="gW3-2E-DCA" secondAttribute="bottom" constant="8" id="pwc-CL-GgZ"/>
+            </constraints>
+            <point key="canvasLocation" x="15" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

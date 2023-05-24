@@ -11,6 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Assembly.shared.register(service: AuthServiceImpl(apiClient: Assembly.shared.resolve()) as AuthService)
         Assembly.shared.register(service: TimeTableServiceImpl(apiClient: Assembly.shared.resolve()) as TimeTableService)
         Assembly.shared.register(service: TokenServiceImpl() as TokenService)
+        Assembly.shared.register(service: FlagStorage())
         
         return true
     }
