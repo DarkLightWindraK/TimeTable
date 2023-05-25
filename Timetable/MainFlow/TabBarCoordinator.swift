@@ -7,15 +7,18 @@ class TabBarCoordinatorImpl: TabBarCoordinator {
     
     private let navigationController: UINavigationController
     private let timeTableService: TimeTableService
+    private let userInfoService: UserInfoService
     private let flagStorage: FlagStorage
     
     init(
         navigationController: UINavigationController,
         timeTableService: TimeTableService,
+        userInfoService: UserInfoService,
         flagStorage: FlagStorage
     ) {
         self.navigationController = navigationController
         self.timeTableService = timeTableService
+        self.userInfoService = userInfoService
         self.flagStorage = flagStorage
     }
     
@@ -38,7 +41,12 @@ class TabBarCoordinatorImpl: TabBarCoordinator {
     }
     
     func showOnboarding() {
-        let onboardingViewController = TabBarViewFactory.createOnboardingScreen()
+        let onboardingViewController = TabBarViewFactory.createOnboardingScreen(
+            userInfoService: userInfoService,
+            completion: {
+                self.showMainScreen()
+            }
+        )
         onboardingViewController.navigationController?.isNavigationBarHidden = false
         navigationController.pushViewController(onboardingViewController, animated: true)
     }

@@ -9,6 +9,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     private lazy var timeTableService: TimeTableService = Assembly.shared.resolve()
     private lazy var tokenService: TokenService = Assembly.shared.resolve()
     private lazy var flagStorage: FlagStorage = Assembly.shared.resolve()
+    private lazy var userInfoService: UserInfoService = Assembly.shared.resolve()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -23,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             authService: authService,
             timeTableService: timeTableService,
             tokenService: tokenService,
+            userInfoService: userInfoService,
             flagStorage: flagStorage
         )
         appCoordinator?.start()

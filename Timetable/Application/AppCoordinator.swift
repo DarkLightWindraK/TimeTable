@@ -6,6 +6,7 @@ class AppCoordinator: Coordinator {
     private let authService: AuthService
     private let timeTableService: TimeTableService
     private let tokenService: TokenService
+    private let userInfoService: UserInfoService
     private let flagStorage: FlagStorage
     
     init(
@@ -13,12 +14,14 @@ class AppCoordinator: Coordinator {
         authService: AuthService,
         timeTableService: TimeTableService,
         tokenService: TokenService,
+        userInfoService: UserInfoService,
         flagStorage: FlagStorage
     ) {
         self.navigationController = navigationController
         self.authService = authService
         self.timeTableService = timeTableService
         self.tokenService = tokenService
+        self.userInfoService = userInfoService
         self.flagStorage = flagStorage
     }
     
@@ -36,6 +39,7 @@ private extension AppCoordinator {
         let tabBarCoordinator = CoordinatorFactory.makeTabBarCoordinator(
             navigationController: navigationController,
             timeTableService: timeTableService,
+            userInfoService: userInfoService,
             flagStorage: flagStorage
         )
         tabBarCoordinator.start()
