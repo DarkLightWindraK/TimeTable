@@ -1,6 +1,6 @@
 import Foundation
 
-struct UserInfo {
+struct UserInfo: Codable {
     let course: Int
     let faculty: String
     let group: String
@@ -17,11 +17,14 @@ class UserInfoServiceImpl: UserInfoService {
     private let storage = UserDefaults.standard
     
     func updateUserInfo(user: UserInfo) {
-        storage.set(user, forKey: Constants.userInfoKey)
+        let data = try? JSONEncoder().encode(user)
+        storage.set(data, forKey: Constants.userInfoKey)
     }
     
     func getSavedUserInfo() -> UserInfo? {
-        storage.object(forKey: Constants.userInfoKey) as? UserInfo
+        guard let data = storage.object(forKey: Constants.userInfoKey) as? Data else { return nil }
+        
+        return try? JSONDecoder().decode(UserInfo.self, from: data)
     }
 }
 

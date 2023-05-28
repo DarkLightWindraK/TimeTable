@@ -17,11 +17,13 @@ enum CoordinatorFactory {
     
     static func makeTimeTableCoordinator(
         navigationController: UINavigationController,
-        timeTableService: TimeTableService
+        timeTableService: TimeTableService,
+        userInfoService: UserInfoService
     ) -> Coordinator {
         TimeTableCoordinatorImpl(
             navigationController: navigationController,
-            timeTableService: timeTableService
+            timeTableService: timeTableService,
+            userInfoService: userInfoService
         )
     }
     

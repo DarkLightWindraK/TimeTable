@@ -1,6 +1,6 @@
 import Foundation
 
-enum Subgroup: String, Encodable {
+enum Subgroup: String, Codable {
     case first = "first", second = "second", all = "all"
 }
 

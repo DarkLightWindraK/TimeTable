@@ -4,14 +4,17 @@ import UIKit
 class MainTabBarConfigurator {
     
     private let timeTableService: TimeTableService
+    private let userInfoService: UserInfoService
     private let userType: UserType
     private var tabs: [TabBarModel] = []
     
     init(
         timeTableService: TimeTableService,
+        userInfoService: UserInfoService,
         userType: UserType
     ) {
         self.timeTableService = timeTableService
+        self.userInfoService = userInfoService
         self.userType = userType
     }
     
@@ -56,7 +59,8 @@ private extension MainTabBarConfigurator {
         case .timeTable:
             coordinator = CoordinatorFactory.makeTimeTableCoordinator(
                 navigationController: flow,
-                timeTableService: timeTableService
+                timeTableService: timeTableService,
+                userInfoService: userInfoService
             )
         }
         coordinator.start()

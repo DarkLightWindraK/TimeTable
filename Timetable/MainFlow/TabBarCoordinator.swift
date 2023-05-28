@@ -23,6 +23,7 @@ class TabBarCoordinatorImpl: TabBarCoordinator {
     }
     
     func start() {
+        navigationController.navigationBar.isHidden = true
         if flagStorage.isFirstLaunchFlag {
             showOnboarding()
             flagStorage.isFirstLaunchFlag = false
@@ -34,6 +35,7 @@ class TabBarCoordinatorImpl: TabBarCoordinator {
     func showMainScreen() {
         let tabBarConfigurator = MainTabBarConfigurator(
             timeTableService: timeTableService,
+            userInfoService: userInfoService,
             userType: .student
         )
         let tabBarController = tabBarConfigurator.configure()
@@ -44,6 +46,7 @@ class TabBarCoordinatorImpl: TabBarCoordinator {
         let onboardingViewController = TabBarViewFactory.createOnboardingScreen(
             userInfoService: userInfoService,
             completion: {
+                self.navigationController.popViewController(animated: true)
                 self.showMainScreen()
             }
         )

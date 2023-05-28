@@ -7,6 +7,7 @@ protocol TimeTablePresenter {
     func loadLessons()
     func showNextDay()
     func showPreviousDay()
+    func showFiltersScreen()
 }
 
 class TimeTablePresenterImpl: TimeTablePresenter {
@@ -14,12 +15,18 @@ class TimeTablePresenterImpl: TimeTablePresenter {
     var delegate: TimeTableCoordinator?
     weak var viewController: TimeTableView?
     
+    private let userInfoService: UserInfoService
     private let timeTableService: TimeTableService
     private let dateFormatter = DateFormatter()
     private var displayedDate: Date = .now
+    private var currentFilterConfig: FilterConfig?
     
-    init(timeTableService: TimeTableService) {
+    init(
+        timeTableService: TimeTableService,
+        userInfoService: UserInfoService
+    ) {
         self.timeTableService = timeTableService
+        self.userInfoService = userInfoService
         
         dateFormatter.locale = Locale(identifier: Constants.dateFormatterLocale)
         dateFormatter.setLocalizedDateFormatFromTemplate(Constants.dateFormatterTemplate)
@@ -49,6 +56,23 @@ class TimeTablePresenterImpl: TimeTablePresenter {
     func loadLessons() {
         viewController?.showNewDate(date: dateFormatter.string(from: displayedDate))
         getTimeTable()
+    }
+    
+    func showFiltersScreen() {
+        if let config = currentFilterConfig {
+            delegate?.openFiltersScreen(currentFilterConfig: config)
+        } else {
+            let userInfo = userInfoService.getSavedUserInfo()
+            let config = FilterConfig(
+                course: userInfo?.course,
+                faculty: userInfo?.faculty,
+                group: userInfo?.group,
+                subgroup: userInfo?.subgroup ?? .all,
+                room: nil,
+                teacher: nil
+            )
+            delegate?.openFiltersScreen(currentFilterConfig: config)
+        }
     }
 }
 

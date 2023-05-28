@@ -26,12 +26,6 @@ class OnboardingUserInfoViewController: UIViewController {
         subgroupTextField.isEnabled = true
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        presenter?.onboardingDidClose()
-    }
-    
     @IBAction func didDoneTap(_ sender: UIButton) {
         presenter?.saveUserInfo(
             course: Int(courseTextField.text ?? "") ?? 1,

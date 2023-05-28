@@ -23,9 +23,6 @@ class OnboardingUserInfoPresenter {
             subgroup: subgroup
         )
         userInfoService.updateUserInfo(user: user)
-    }
-    
-    func onboardingDidClose() {
         completion?()
     }
 }
