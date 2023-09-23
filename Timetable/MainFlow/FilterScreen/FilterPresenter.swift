@@ -13,4 +13,8 @@ class FilterPresenter {
     func getFilterConfig() -> FilterConfig {
         config
     }
+    
+    func saveFilterConfig(newConfig: FilterConfig) {
+        delegate?.closeFilterScreen(newFilterConfig: newConfig)
+    }
 }

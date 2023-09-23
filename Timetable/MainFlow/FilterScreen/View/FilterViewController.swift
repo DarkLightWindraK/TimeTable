@@ -18,7 +18,14 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func didApplyTap(_ sender: UIButton) {
-        
+        var newConfig = FilterConfig(
+            course: Int(courseTextField.text ?? ""),
+            faculty: facultyTextField.text,
+            group: groupTextField.text,
+            room: groupTextField.text,
+            teacher: teacherTextField.text
+        )
+        presenter?.saveFilterConfig(newConfig: newConfig)
     }
     
 }

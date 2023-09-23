@@ -19,7 +19,7 @@ class TimeTablePresenterImpl: TimeTablePresenter {
     private let timeTableService: TimeTableService
     private let dateFormatter = DateFormatter()
     private var displayedDate: Date = .now
-    private var currentFilterConfig: FilterConfig?
+    private var currentFilterConfig: FilterConfig!
     
     init(
         timeTableService: TimeTableService,
@@ -34,7 +34,16 @@ class TimeTablePresenterImpl: TimeTablePresenter {
     
     func getTimeTable() {
         firstly {
-            timeTableService.getTimeTable(faculty: "Faculty of Mathematics and Mechanics", course: 1, group: "MM-21", subgroup: .all)
+            timeTableService.getTimeTable(
+                startTime: displayedDate.startOfDay.ISO8601Format(),
+                endTime: displayedDate.endOfDay.ISO8601Format(),
+                faculty: currentFilterConfig.faculty,
+                course: currentFilterConfig.course,
+                group: currentFilterConfig.group,
+                subgroup: currentFilterConfig.subgroup,
+                teacher: currentFilterConfig.teacher,
+                room: currentFilterConfig.room
+            )
         }.done { [weak self] response in
             self?.lessons = LessonMapper.transformToLesson(lessons: response.lessons)
             self?.viewController?.showLessons()
@@ -55,24 +64,20 @@ class TimeTablePresenterImpl: TimeTablePresenter {
     
     func loadLessons() {
         viewController?.showNewDate(date: dateFormatter.string(from: displayedDate))
+        let userInfo = userInfoService.getSavedUserInfo()
+        currentFilterConfig = FilterConfig(
+            course: userInfo?.course,
+            faculty: userInfo?.faculty,
+            group: userInfo?.group,
+            subgroup: userInfo?.subgroup ?? .all,
+            room: nil,
+            teacher: nil
+        )
         getTimeTable()
     }
     
     func showFiltersScreen() {
-        if let config = currentFilterConfig {
-            delegate?.openFiltersScreen(currentFilterConfig: config)
-        } else {
-            let userInfo = userInfoService.getSavedUserInfo()
-            let config = FilterConfig(
-                course: userInfo?.course,
-                faculty: userInfo?.faculty,
-                group: userInfo?.group,
-                subgroup: userInfo?.subgroup ?? .all,
-                room: nil,
-                teacher: nil
-            )
-            delegate?.openFiltersScreen(currentFilterConfig: config)
-        }
+        delegate?.openFiltersScreen(currentFilterConfig: currentFilterConfig)
     }
 }
 
@@ -83,3 +88,17 @@ private extension TimeTablePresenterImpl {
         static let dateFormatterTemplate = "EEE MMM d yyyy"
     }
 }
+
+private extension Date {
+    var startOfDay: Date {
+        return Calendar.current.startOfDay(for: self)
+    }
+    
+    var endOfDay: Date {
+        var components = DateComponents()
+        components.day = 1
+        components.second = -1
+        return Calendar.current.date(byAdding: components, to: startOfDay)!
+    }
+}
+

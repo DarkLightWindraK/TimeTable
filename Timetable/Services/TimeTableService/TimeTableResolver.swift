@@ -5,6 +5,6 @@ struct TimeTableResolver: HAPIResolver {
     var params: TimeTableRequest
     
     var endpoint: String {
-        "get-timetable"
+        "timetable/get"
     }
 }

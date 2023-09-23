@@ -37,10 +37,10 @@ class AuthServiceImpl: AuthService {
         password: String,
         userType: UserType
     ) -> Promise<RegisterResponse> {
+        let credentials = UserCredentials(login: login, password: password)
         let params = RegisterParams(
             fullname: fullname,
-            login: login,
-            password: password,
+            userCredetials: credentials,
             userType: userType
         )
         let resolver = RegisterResolver(params: params)

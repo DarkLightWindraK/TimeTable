@@ -5,10 +5,10 @@ struct FilterConfig {
     let faculty: String?
     let group: String?
     let subgroup: Subgroup
-    let room: Int?
+    let room: String?
     let teacher: String?
     
-    init(course: Int?, faculty: String?, group: String?, subgroup: Subgroup = .all, room: Int?, teacher: String?) {
+    init(course: Int?, faculty: String?, group: String?, subgroup: Subgroup = .all, room: String?, teacher: String?) {
         self.course = course
         self.faculty = faculty
         self.group = group

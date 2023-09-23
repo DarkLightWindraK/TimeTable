@@ -16,7 +16,7 @@ class TimeTableViewController: UIViewController, TimeTableView {
         collectionView.dataSource = self
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.backgroundColor = .secondarySystemBackground
+        collectionView.backgroundColor = .systemBackground
         return collectionView
     }()
 
@@ -25,6 +25,7 @@ class TimeTableViewController: UIViewController, TimeTableView {
         
         setupNavigationBar()
         setupCollectionView()
+        setupTabBar()
         
         self.view.backgroundColor = .systemBackground
         self.tabBarController?.tabBar.backgroundColor = .systemBackground
@@ -98,11 +99,17 @@ private extension TimeTableViewController {
             forCellWithReuseIdentifier: Constants.cellID
         )
         NSLayoutConstraint.activate([
-            scheduleCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            scheduleCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scheduleCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            scheduleCollectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 23),
+            scheduleCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
+            scheduleCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -23),
             scheduleCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    func setupTabBar() {
+        self.tabBarController?.tabBar.layer.borderWidth = 0.50
+        self.tabBarController?.tabBar.layer.borderColor = UIColor.lightGray.cgColor
+        self.tabBarController?.tabBar.clipsToBounds = true
     }
     
     enum Constants {

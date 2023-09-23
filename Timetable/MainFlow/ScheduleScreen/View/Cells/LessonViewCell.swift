@@ -4,6 +4,8 @@ class LessonViewCell: UICollectionViewCell {
     @IBOutlet private weak var subjectLabel: UILabel!
     @IBOutlet private weak var teacherLabel: UILabel!
     @IBOutlet private weak var roomLabel: UILabel!
+    @IBOutlet private weak var startTimeLabel: UILabel!
+    @IBOutlet private weak var endTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -14,6 +16,8 @@ class LessonViewCell: UICollectionViewCell {
         subjectLabel.text = lesson.name
         teacherLabel.text = lesson.teacher
         roomLabel.text = "Аудитория: \(lesson.room)"
+        startTimeLabel.text = lesson.beginOfLesson
+        endTimeLabel.text = lesson.endOfLesson
     }
 }
 

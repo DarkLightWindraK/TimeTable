@@ -40,7 +40,7 @@ class TimeTableCoordinatorImpl: TimeTableCoordinator {
     func openFiltersScreen(
         currentFilterConfig: FilterConfig
     ) {
-        //navigationController.tabBarController?.tabBar.isHidden = true
+        navigationController.tabBarController?.tabBar.isHidden = true
         navigationController.pushViewController(
             TimeTableViewFactory.getFiltersViewController(
                 filterConfig: currentFilterConfig,
@@ -51,7 +51,7 @@ class TimeTableCoordinatorImpl: TimeTableCoordinator {
     }
     
     func closeFilterScreen(newFilterConfig: FilterConfig) {
-        //navigationController.tabBarController?.tabBar.isHidden = false
+        navigationController.tabBarController?.tabBar.isHidden = false
         navigationController.popViewController(animated: true)
     }
 }

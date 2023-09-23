@@ -27,19 +27,25 @@
                                     <constraint firstAttribute="width" constant="2" id="go7-qU-sOb"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MFy-nH-nJ4">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="-32" translatesAutoresizingMaskIntoConstraints="NO" id="MFy-nH-nJ4">
                                 <rect key="frame" x="0.0" y="0.0" width="98" height="192"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StartTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGI-gD-eiz">
-                                        <rect key="frame" x="12" y="0.0" width="74.333333333333329" height="96"/>
+                                        <rect key="frame" x="12" y="0.0" width="74.333333333333329" height="85.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfw-ym-u3Q">
+                                        <rect key="frame" x="45.333333333333336" y="53.333333333333336" width="7.6666666666666643" height="85.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EndTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZH-rB-OtK">
-                                        <rect key="frame" x="19" y="96" width="60" height="96"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <rect key="frame" x="15.666666666666664" y="106.66666666666669" width="67" height="85.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -106,7 +112,9 @@
             </constraints>
             <size key="customSize" width="465" height="192"/>
             <connections>
+                <outlet property="endTimeLabel" destination="zZH-rB-OtK" id="Zhk-PE-ezJ"/>
                 <outlet property="roomLabel" destination="a0M-UF-blI" id="bYL-PO-vlp"/>
+                <outlet property="startTimeLabel" destination="AGI-gD-eiz" id="fyl-Ud-LZg"/>
                 <outlet property="subjectLabel" destination="8fu-sV-IpZ" id="kza-1P-UL3"/>
                 <outlet property="teacherLabel" destination="0xD-TE-zuK" id="Az8-3o-Bvp"/>
             </connections>
@@ -116,9 +124,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
